@@ -338,3 +338,9 @@ func TestHSLToRGB(t *testing.T) {
 		})
 	}
 }
+
+// CVE-2023-36308 https://security.snyk.io/vuln/SNYK-GOLANG-GITHUBCOMDISINTEGRATIONIMAGING-5880692
+func TestCVE2023_36308(t *testing.T) {
+	imageTIFF := mustOpen("testdata/poc.tiff")
+	Grayscale(imageTIFF)
+}
